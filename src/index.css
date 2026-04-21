@@ -4,44 +4,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
-    --foreground: 120 100% 85%;
+    --background: 222 47% 5%;
+    --foreground: 213 100% 88%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 120 100% 85%;
+    --card: 222 40% 7%;
+    --card-foreground: 213 100% 88%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 120 100% 85%;
+    --popover: 222 40% 7%;
+    --popover-foreground: 213 100% 88%;
 
-    --primary: 120 80% 50%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 213 100% 60%;
+    --primary-foreground: 222 47% 5%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 120 60% 70%;
+    --secondary: 222 35% 12%;
+    --secondary-foreground: 213 80% 75%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 50%;
+    --muted: 222 35% 10%;
+    --muted-foreground: 213 30% 50%;
 
-    --accent: 120 80% 50%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 213 100% 60%;
+    --accent-foreground: 222 47% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 120 80% 50%;
+    --border: 222 30% 14%;
+    --input: 222 30% 14%;
+    --ring: 213 100% 60%;
 
     --radius: 0.125rem;
 
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 120 60% 70%;
-    --sidebar-primary: 120 80% 50%;
-    --sidebar-primary-foreground: 0 0% 5%;
-    --sidebar-accent: 0 0% 8%;
-    --sidebar-accent-foreground: 120 60% 70%;
-    --sidebar-border: 0 0% 14%;
-    --sidebar-ring: 120 80% 50%;
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 213 80% 75%;
+    --sidebar-primary: 213 100% 60%;
+    --sidebar-primary-foreground: 222 47% 5%;
+    --sidebar-accent: 222 35% 10%;
+    --sidebar-accent-foreground: 213 80% 75%;
+    --sidebar-border: 222 30% 14%;
+    --sidebar-ring: 213 100% 60%;
   }
 }
 
@@ -49,7 +49,6 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
     font-family: "JetBrains Mono", "Fira Code", monospace;
@@ -57,50 +56,31 @@
 }
 
 @layer utilities {
-  .glow-green {
+  .glow-blue {
     box-shadow:
-      0 0 20px rgba(74, 222, 128, 0.2),
-      0 0 60px rgba(74, 222, 128, 0.05);
+      0 0 30px rgba(59, 130, 246, 0.2),
+      0 0 80px rgba(59, 130, 246, 0.05);
   }
-
-  .glow-green-text {
-    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+  .glow-blue-text {
+    text-shadow: 0 0 30px rgba(96, 165, 250, 0.6);
   }
-
-  .glow-red {
-    box-shadow:
-      0 0 20px rgba(239, 68, 68, 0.25),
-      0 0 60px rgba(239, 68, 68, 0.05);
+  .blue-border {
+    border: 1px solid rgba(59, 130, 246, 0.2);
   }
-
-  .terminal-border {
-    border: 1px solid rgba(74, 222, 128, 0.2);
+  .blue-border-bright {
+    border: 1px solid rgba(59, 130, 246, 0.4);
   }
-
-  .terminal-border-red {
-    border: 1px solid rgba(239, 68, 68, 0.25);
-  }
-
   .card-hover {
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-
   .card-hover:hover {
-    transform: translateY(-4px);
-    border-color: rgba(74, 222, 128, 0.45);
-    box-shadow: 0 8px 32px rgba(74, 222, 128, 0.1);
+    transform: translateY(-3px);
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
   }
-
-  .card-hover-red:hover {
-    transform: translateY(-4px);
-    border-color: rgba(239, 68, 68, 0.45);
-    box-shadow: 0 8px 32px rgba(239, 68, 68, 0.1);
-  }
-
   .blink {
     animation: blink 1.2s step-end infinite;
   }
-
   @keyframes blink {
     0%,
     100% {
@@ -110,11 +90,9 @@
       opacity: 0;
     }
   }
-
   .modal-in {
     animation: modalIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-
   @keyframes modalIn {
     from {
       opacity: 0;
@@ -123,6 +101,19 @@
     to {
       opacity: 1;
       transform: scale(1) translateY(0);
+    }
+  }
+  .fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
