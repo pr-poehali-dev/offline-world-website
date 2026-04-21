@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				cormorant: ['Cormorant', 'serif'],
-				'cormorant-garamond': ['Cormorant Garamond', 'serif'],
+				mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+				sans: ['Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
